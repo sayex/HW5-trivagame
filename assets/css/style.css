@@ -1,6 +1,18 @@
+body {
+    background: url(../images/background.jpeg);
+}
+
+.wrapper {
+    text-align: center;
+    background: url(../images/secondbackground.jpeg);
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 100px;
+    height: 450px;
+}
+
 .answer-generated {
     text-align: center;
-    width: 20%;
 }
 
 .answer-generated:hover {
@@ -14,5 +26,9 @@
     background: yellow;
     cursor: pointer;
     text-align: center;
-    width: 20%;
+
+}
+
+#answers {
+    text-align: center;
 }

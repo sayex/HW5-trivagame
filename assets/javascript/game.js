@@ -23,12 +23,12 @@ var questionsObject = {
 
 };
 
-//create the score varables used for wrong and correct answers selected.
+
 var guessedCorrect = 0;
 var guessedInncorect = 0;
 var noGuessAnswers = 0;
-var timeReset = 5
-var timeLeft = 5;
+var timeReset = 10
+var timeLeft = 10;
 var intervalId;
 var qCounter = 1;
 var correctAnswer = "";
@@ -41,10 +41,15 @@ function gameLoad() {
     startButton.text("Start")
     $("#answers").append(startButton)
     $(".startButton").on("click", function () {
-        $("#answers").empty();
+        emptyText();
         displayQuestion(qCounter);
     })
 
+}
+
+function emptyText() {
+    $("#answers").empty()
+    $(".question").empty()
 }
 
 function correctGuess() {
@@ -52,8 +57,12 @@ function correctGuess() {
     stop()
     timeLeft = timeReset
     $("#timeLeft").html(timeLeft)
-    $("#answers").empty()
-    $(".question").empty()
+    emptyText()
+    $(".question").text("Correct!!")
+    var imgDisplay = $("<img>")
+    imgDisplay.attr("src", questionImg)
+    $("#answers").append(imgDisplay);
+
 }
 
 function incorrectGuess() {
@@ -61,8 +70,9 @@ function incorrectGuess() {
     stop()
     timeLeft = timeReset
     $("#timeLeft").html(timeLeft)
-    $("#answers").empty()
-    $(".question").empty()
+    emptyText()
+    $(".question").text("Incorrect!!")
+    $("#answers").html("<h2>correct answer was " + correctAnswer + "</h2>")
 }
 
 function timmerUp() {
@@ -75,7 +85,9 @@ function timmerUp() {
     qCounter++
     setTimeout(function () {
         displayQuestion(qCounter)
-    }, 1000)
+    }, 3000)
+    $(".question").text("Times Up!!")
+    $("#answers").html("<h2>correct answer was " + correctAnswer + "</h2>")
 
 
 }
@@ -101,6 +113,7 @@ function gameOver() {
 }
 
 function displayQuestion(x) {
+    emptyText();
     if (qCounter === 4) {
         gameOver()
 
@@ -137,13 +150,13 @@ function displayQuestion(x) {
                 correctGuess();
                 setTimeout(function () {
                     displayQuestion(qCounter)
-                }, 1000)
+                }, 3000)
             } else {
                 qCounter++
                 incorrectGuess()
                 setTimeout(function () {
                     displayQuestion(qCounter)
-                }, 1000)
+                }, 3000)
 
             }
         })
