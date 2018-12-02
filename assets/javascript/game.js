@@ -27,22 +27,30 @@ var questionsObject = {
 var guessedCorrect = 0;
 var guessedInncorect = 0;
 var noGuessAnswers = 0;
-var timeLeft = 30;
+var timeReset = 5
+var timeLeft = 5;
 var intervalId;
 var qCounter = 1;
 var correctAnswer = "";
 var questionImg = "";
 
 
+function gameLoad() {
+    var startButton = $("<h1>");
+    startButton.addClass("startButton");
+    startButton.text("Start")
+    $("#answers").append(startButton)
+    $(".startButton").on("click", function () {
+        $("#answers").empty();
+        displayQuestion(qCounter);
+    })
 
-
-
-//code a for loop to create the answer buttons and select a question from the object
+}
 
 function correctGuess() {
     guessedCorrect++
     stop()
-    timeLeft = 30
+    timeLeft = timeReset
     $("#timeLeft").html(timeLeft)
     $("#answers").empty()
     $(".question").empty()
@@ -51,16 +59,45 @@ function correctGuess() {
 function incorrectGuess() {
     guessedInncorect++
     stop()
-    timeLeft = 30
+    timeLeft = timeReset
     $("#timeLeft").html(timeLeft)
     $("#answers").empty()
     $(".question").empty()
 }
 
+function timmerUp() {
+    noGuessAnswers++
+    stop()
+    timeLeft = timeReset
+    $("#timeLeft").html(timeLeft)
+    $("#answers").empty()
+    $(".question").empty()
+    qCounter++
+    setTimeout(function () {
+        displayQuestion(qCounter)
+    }, 1000)
+
+
+}
+
 function gameOver() {
+    $(".question").text("Game Over")
     console.log(guessedCorrect);
     console.log(guessedInncorect);
     console.log(noGuessAnswers);
+
+    var startButton = $("<h1>");
+    startButton.addClass("startButton");
+    startButton.text("Play Again?")
+    $("#answers").append(startButton)
+    $(".startButton").on("click", function () {
+        $("#answers").empty();
+        guessedCorrect = 0
+        guessedInncorect = 0
+        qCounter = 1
+        noGuessAnswers = 0
+        displayQuestion(qCounter);
+    })
 }
 
 function displayQuestion(x) {
@@ -100,7 +137,14 @@ function displayQuestion(x) {
                 correctGuess();
                 setTimeout(function () {
                     displayQuestion(qCounter)
-                }, 5000)
+                }, 1000)
+            } else {
+                qCounter++
+                incorrectGuess()
+                setTimeout(function () {
+                    displayQuestion(qCounter)
+                }, 1000)
+
             }
         })
 
@@ -124,7 +168,8 @@ function decrement() {
     $("#timeLeft").html(timeLeft)
 
     if (timeLeft === 0) {
-        stop();
+        timmerUp()
+
 
 
     }
@@ -135,4 +180,4 @@ function stop() {
 }
 
 
-displayQuestion(qCounter)
+gameLoad()
