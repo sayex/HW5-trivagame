@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-eauiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Triva Game</title>
+
 </head>
 
 <body>
-
-
-    <script src="assets/javascript/game.js/"></script>
+    <div class="wrapper">
+        <header>
+            <div class="title">
+                <h1>Totally Trivial Trivia</h1>
+            </div>
+        </header>
+        <div id="timeRemaining">
+            Time Remaining: <span id="timeLeft">30</span> Seconds
+        </div>
+        <section class="game">
+            <h1 class="question"></h1>
+            <div id="answers"></div>
+        </section>
+    </div>
+    <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+.answer-generated {
+    text-align: center;
+    width: 20%;
+}
+
+.answer-generated:hover {
+    border: 1px solid black;
+    background: yellow;
+    cursor: pointer;
+}
