@@ -77,6 +77,7 @@ $(document).ready(function () {
     var qCounter = 1;
     var correctAnswer = "";
     var questionImg = "";
+    var clickedAnswer = ""
 
     //  create functions for the specific tasks
 
@@ -190,7 +191,7 @@ $(document).ready(function () {
                 var answersDiv = $("<div>");
                 var h1 = $("<h1>");
                 h1.addClass("answer-generated");
-                h1.val(answers[i]);
+                h1.attr("data-value", answers[i]);
                 h1.text(answers[i]);
 
                 answersDiv.append(h1);
@@ -203,7 +204,7 @@ $(document).ready(function () {
 
             $(".answer-generated").on("click", function () {
 
-                var answerClicked = $(this).val();
+                var answerClicked = $(this).attr("data-value");
                 if (answerClicked === correctAnswer) {
                     qCounter++;
                     correctGuess();
