@@ -27,6 +27,42 @@ $(document).ready(function () {
             possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
             answer: "601,736",
             imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "5": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "6": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "7": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "8": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "9": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
+        },
+        "10": {
+            q: "How many lights on a house is currently the world record?",
+            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
+            answer: "601,736",
+            imageLocation: "assets/images/mostlightsonhouse.jpg"
         }
 
     };
