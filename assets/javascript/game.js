@@ -1,18 +1,24 @@
 //create an object that holds all questions and answers
 
 var questionsObject = {
-    q1: {
+    "1": {
         q: "What Color is the Sky?",
         possibleAnswers: ["blue", "green", "yellow", "red"],
         answer: "blue",
         imageLocation: "assets/images/happy1.gif"
 
     },
-    q2: {
+    "2": {
         q: "Who said the answer is 42?",
         possibleAnswers: ["Douglas Adams", "Hurbert Walker", "Siri", "Mother Terisa"],
         answer: "Douglas Adams",
-        imageLocation: ""
+        imageLocation: "assets/images/tenor.gif"
+    },
+    "3": {
+        q: "Did Someone Say test?",
+        possibleAnswers: ["Yes", "No", "Maybe", "Kinda"],
+        answer: "Yes",
+        imageLocation: "assets/images/tenor.gif"
     }
 
 };
@@ -23,11 +29,87 @@ var guessedInncorect = 0;
 var noGuessAnswers = 0;
 var timeLeft = 30;
 var intervalId;
-var questionCounter = 1;
+var qCounter = 1;
 var correctAnswer = "";
 var questionImg = "";
 
-// code a start game function on page load
+
+
+
+
+//code a for loop to create the answer buttons and select a question from the object
+
+function correctGuess() {
+    guessedCorrect++
+    stop()
+    timeLeft = 30
+    $("#timeLeft").html(timeLeft)
+    $("#answers").empty()
+    $(".question").empty()
+}
+
+function incorrectGuess() {
+    guessedInncorect++
+    stop()
+    timeLeft = 30
+    $("#timeLeft").html(timeLeft)
+    $("#answers").empty()
+    $(".question").empty()
+}
+
+function gameOver() {
+    console.log(guessedCorrect);
+    console.log(guessedInncorect);
+    console.log(noGuessAnswers);
+}
+
+function displayQuestion(x) {
+    if (qCounter === 4) {
+        gameOver()
+
+    } else {
+        var currentQuestion = questionsObject[x].q
+
+
+        var answers = questionsObject[x].possibleAnswers;
+
+        correctAnswer = questionsObject[x].answer;
+
+        questionImg = questionsObject[x].imageLocation;
+
+        for (i = 0; i < answers.length; i++) {
+            var answersDiv = $("<div>");
+            var h1 = $("<h1>");
+            h1.addClass("answer-generated")
+            h1.val(answers[i])
+            h1.text(answers[i])
+
+            answersDiv.append(h1)
+
+            $("#answers").append(answersDiv)
+
+        }
+        $(".question").text(currentQuestion)
+        countDownTimer()
+
+        $(".answer-generated").on("click", function () {
+
+            var answerClicked = $(this).val();
+            if (answerClicked === correctAnswer) {
+                qCounter++
+                correctGuess();
+                setTimeout(function () {
+                    displayQuestion(qCounter)
+                }, 5000)
+            }
+        })
+
+    }
+}
+
+
+
+
 
 //code a timer for each question
 
@@ -53,55 +135,4 @@ function stop() {
 }
 
 
-
-//code a for loop to create the answer buttons and select a question from the object
-
-
-function displayQuestion(x) {
-    var currentQuestion = eval("questionsObject.q" + x + ".q")
-
-
-    var answers = eval("questionsObject.q" + x + ".possibleAnswers")
-
-    correctAnswer = eval("questionsObject.q" + x + ".answer")
-
-    questionImg = eval("questionsObject.q" + x + ".imageLocation")
-
-    for (i = 0; i < answers.length; i++) {
-        var answersDiv = $("<div>");
-        var h1 = $("<h1>");
-        h1.attr("class", "answer-generated")
-        h1.val(answers[i])
-        h1.text(answers[i])
-
-        answersDiv.append(h1)
-
-        $("#answers").append(answersDiv)
-
-    }
-    $(".question").text(currentQuestion)
-}
-
-//create a function to display wrong and correct answers with picuters.
-
-function correctGuess() {
-    $("#answers").empty()
-    questionCounter++
-
-    var imgTag = $("<img>")
-    imgTag.attr("src", questionImg)
-
-    $("#answers").html("<h1>Correct!!!</h1>")
-    $("#answers").append(imgTag)
-
-}
-
-//create a function to listen for click of the answer buttons. in this function it needs to compair the clicked answer to the correct answer and update the screen with the answer.
-displayQuestion(questionCounter);
-
-$(".answer-generated").on("click", function () {
-    var answerClicked = $(this).val();
-    if (answerClicked === correctAnswer) {
-        correctGuess()
-    }
-})
+displayQuestion(qCounter)
