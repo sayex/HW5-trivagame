@@ -29,40 +29,40 @@ $(document).ready(function () {
             imageLocation: "assets/images/mostlightsonhouse.jpg"
         },
         "5": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "What is the unit of mesurment of light?",
+            possibleAnswers: ["watts", "ohms", "kelvins", "lux"],
+            answer: "lux",
+            imageLocation: "assets/images/lux.jpg"
         },
         "6": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "LED stands for what?",
+            possibleAnswers: ["Lux emitting diode", "Light emitting diode", "Lightbulb emitting diode", "Lux emission dioxide"],
+            answer: "Light emitting diode",
+            imageLocation: "assets/images/led.gif"
         },
         "7": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "What specturm of light is heat?",
+            possibleAnswers: ["infrared", "x-rays", "ultraviolt", "microwave"],
+            answer: "infrared",
+            imageLocation: "assets/images/infrared.gif"
         },
         "8": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "Photography means what?",
+            possibleAnswers: ["visable spectrum capture", "photon grafics", "writing with light", "image sensative paper"],
+            answer: "writing with light",
+            imageLocation: "assets/images/Photography.gif"
         },
         "9": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "How long does light take to hit earth from the sun",
+            possibleAnswers: ["8 seconds", "1 second", "60 minutes", "8 minutes"],
+            answer: "8 minutes",
+            imageLocation: "assets/images/sun.gif"
         },
         "10": {
-            q: "How many lights on a house is currently the world record?",
-            possibleAnswers: ["601,736", "1.1b", "204,451", "86,923"],
-            answer: "601,736",
-            imageLocation: "assets/images/mostlightsonhouse.jpg"
+            q: "How fast does light travel?",
+            possibleAnswers: ["186,282 miles per second", "186,282 miles per hour", "186,282 miles per milisecond"],
+            answer: "186,282 miles per second",
+            imageLocation: "assets/images/mostlighttravel.gif"
         }
 
     };
