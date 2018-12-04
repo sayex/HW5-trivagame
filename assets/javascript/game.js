@@ -62,7 +62,7 @@ $(document).ready(function () {
             q: "How fast does light travel?",
             possibleAnswers: ["186,282 miles per second", "186,282 miles per hour", "186,282 miles per milisecond"],
             answer: "186,282 miles per second",
-            imageLocation: "assets/images/mostlighttravel.gif"
+            imageLocation: "assets/images/lighttravel.gif"
         }
 
     };
