@@ -1,4 +1,4 @@
-# HW5-trivagame
+# Trivagame
 
 ## Project Goals
 
@@ -14,8 +14,8 @@
 
 In this assignment, You'll create a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Be sure to layout this app with valid HTML and stylish CSS.
 
-<https://sayex.github.io/HW5-trivagame/>
+<https://sayex.github.io/trivagame/>
 
 #### Profile Website
 
-<https://sayex.github.io/HW2-Responsiv…>
+<https://sayex.github.io/Responsive-Portfolio/>
